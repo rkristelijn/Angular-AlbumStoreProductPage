@@ -5,14 +5,15 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 //import 'rxjs/add/operator/delay';
 
+import { Album } from './album';
+
 @Injectable()
 export class ProductService {
   private _albumUrl: string = '../assets/album.json';
   constructor(private _http: Http) { }
-  //public getAlbum(id: number): Observable<any> {
-  public getAlbum(id: number) {
+  public getAlbum(id: number): Observable<Album> {
     return this._http.get(this._albumUrl)
       //.delay(5000)
-      .map(response => response.json())
+      .map(response => <Album>response.json())
   }
 }
