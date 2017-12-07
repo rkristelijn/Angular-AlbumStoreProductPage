@@ -3,6 +3,7 @@ import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/delay';
 
 @Injectable()
 export class ProductService {
@@ -11,6 +12,7 @@ export class ProductService {
   //public getAlbum(id: number): Observable<any> {
   public getAlbum(id: number) {
     return this._http.get(this._albumUrl)
+      .delay(5000)
       .map(response => response.json())
   }
 }
