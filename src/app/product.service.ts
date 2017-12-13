@@ -15,10 +15,23 @@ export class ProductService {
     return this._http.get(this._albumUrl)
       //.delay(5000)
       .map(
-        (response) => {
-          //console.log(response, <Album>response.json(), typeof(<Album>response.json()));
-          return <Album>response.json();
-        }
+        // (response) => {
+        //   //http://acdcjunior.github.io/typescript-cast-object-to-other-type-or-instanceof.html
+        //   //https://www.typescriptlang.org/docs/handbook/advanced-types.html#type-guards-and-differentiating-types
+        //   //console.log(response, <Album>response.json(), typeof(<Album>response.json()));
+        //   // return <Album>response.json(); // The getAlbum method isn't returning the correct response.
+        //   let ret : Album;
+        //   ret = <Album>response.json().album; 
+        //   //console.log(ret, 'instance of Album?');
+        //   //if(this.isAlbumTypeGuard(ret)) console.log('yes'); else console.log('no');
+        //   return ret;
+        // }
+        response => <Album>response.json().album
       )
+  }
+
+  isAlbumTypeGuard(album: any): album is Album {
+    console.log('isAlbumTypeGuard', album.name);
+    return album.name !== undefined && album.releaseDate!==undefined;
   }
 }
