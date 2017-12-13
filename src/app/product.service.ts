@@ -26,7 +26,7 @@ export class ProductService {
         //   //if(this.isAlbumTypeGuard(ret)) console.log('yes'); else console.log('no');
         //   return ret;
         // }
-        response => <Album>response.json().album
+        response => <Album>response.json()
       )
   }
 
