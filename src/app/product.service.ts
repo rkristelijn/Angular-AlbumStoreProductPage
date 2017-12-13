@@ -15,7 +15,10 @@ export class ProductService {
     return this._http.get(this._albumUrl)
       //.delay(5000)
       .map(
-        (response) => <Album>response.json()
+        (response) => {
+          //console.log(response, <Album>response.json(), typeof(<Album>response.json()));
+          return <Album>response.json();
+        }
       )
   }
 }
