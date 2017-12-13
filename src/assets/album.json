@@ -1,4 +1,7 @@
 {
+  "id": 1,
+  "artist": "The Prependers",
+  "album": {
     "name": "Opacity Zero",
     "releaseDate": "September 25, 2014",
     "coverImage": "assets/opacity-zero.jpg",
@@ -12,4 +15,5 @@
       {"trackNumber": 7, "trackName": "Shopping Cart", "trackLength": "9:07", "trackPrice": 0.99 },
       {"trackNumber": 8, "trackName": "Our Gift to You", "trackLength": "3:59", "trackPrice": 0.99 }
     ]
+  }
 }
